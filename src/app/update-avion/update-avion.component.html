@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Avion :</h2>
+    </div>
+    <form >
+    <div  class="col-sm-2 col-md-2 col-lg-2">
+        <label > ID Avion</label>
+            <input readonly type="text" [(ngModel)]= "currentAvion.idAvion" name="idAvion" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Avion</label>
+            <input type="text"[(ngModel)]= "currentAvion.nomAvion" name="nomAvion" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+        <label > Capacite</label>
+            <input type="number" [(ngModel)]= "currentAvion.capacite" name="capacite" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label > Compagnie</label>
+            <input type="string" [(ngModel)]= "currentAvion.compagnie" name="compagnie" class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Vol</label>
+        <select class="form-control form-control-lg" id="idV" name="idV" [(ngModel)]="updatedVId">
+            <option *ngFor="let v of vols" [value]="v.idV">
+                {{v.destinationV}}
+            </option>
+        </select>
+    </div> 
+
+    <div class="mt-2">
+        <button type="submit" (click)="updateAvion()" class="btn btn-success">Modifer</button>
+    </div>
+    </form>
+</div>

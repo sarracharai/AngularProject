@@ -1,0 +1,36 @@
+<div class="container">
+
+
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <label>Vols </label>
+        <select class="form-control form-control-lg" id="idV" name="idV" [(ngModel)]="IdVol" (change)="onChange()">
+            <option *ngFor="let v of vols" [value]="v.idV">
+                {{v.destinationV}}
+            </option>
+        </select>
+    </div>
+
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th><th>Nom</th> <th>Capacite</th> <th>Compagnie</th> <th>Vol</th> 
+                    </tr>
+                </thead>
+                <tbody *ngFor="let avion of avions">
+                    <tr >
+                        <td>{{avion.idAvion}}</td>
+                        <td>{{avion.nomAvion}}</td>
+                        <td>{{avion.capacite}}</td>
+                        <td>{{avion.compagnie}}</td>
+                        <td>{{avion.vol.destinationV}}</td>
+                        <!-- <td><a class="btn btn-danger" (click)="supprimerAvion(avion)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateAvion',avion.idAvion]">Modifier</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
